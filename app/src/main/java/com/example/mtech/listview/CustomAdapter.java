@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 
 public class CustomAdapter extends BaseAdapter implements StickyListHeadersAdapter{
@@ -60,21 +62,35 @@ public class CustomAdapter extends BaseAdapter implements StickyListHeadersAdapt
         }
         //set header text as first char in name
 
-        String headerText = "Today";//"" + result[position].subSequence(0, 1).charAt(0);
+        String headerText = null;
+        switch (timeDuration[position])
+        {
+            case 39: headerText = "Today";
+                        break;
+            case 3: headerText = "Yesterday";
+                        break;
+            case 5:
+            case 7: headerText = "Earlier";
+                        break;
+        }
+
+        //String headerText = "" + result[position].subSequence(0, 1).charAt(0);
         holder.text.setText(headerText);
         return convertView;
     }
 
     @Override
     public long getHeaderId(int i) {
-        Log.d("myTag", result[i]);
-        return result[i].subSequence(0, 1).charAt(0);
+        Random random = new Random();
+        Log.d("Time", MilisecondsConverter.msToString(1456229372005L));
+        //Log.d("myTag", String.valueOf(timeDuration[i]));
+        return timeDuration[i];
     }
 
     public class Holder
     {
         TextView tv;
-        TextView time;
+        TextView textView;
         ImageView img;
     }
 
@@ -91,10 +107,11 @@ public class CustomAdapter extends BaseAdapter implements StickyListHeadersAdapt
             convertView = inflater.inflate(R.layout.program_list, parent, false);
             holder.tv = (TextView) convertView.findViewById(R.id.textView1);
             holder.img=(ImageView) convertView.findViewById(R.id.imageView1);
-            //holder.time = (TextView) convertView.findViewById(R.id.textView3);
+            holder.textView = (TextView) convertView.findViewById(R.id.textView3);
             holder.tv.setText(result[position]);
             holder.img.setImageResource(imageId[position]);
-            //holder.time.setText(timeDuration[position]);
+
+            holder.textView.setText(String.valueOf(timeDuration[position]));
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();

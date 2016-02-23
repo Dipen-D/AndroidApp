@@ -17,9 +17,9 @@ public class MainActivity extends Activity {
     Context context;
 
     ArrayList prgmName;
-    public static int [] prgmImages={R.drawable.accompressor ,R.drawable.belttensioner,R.drawable.bumper,R.drawable.doorhandle,R.drawable.accontrols,R.drawable.accompressor,R.drawable.bumper,R.drawable.doorhandle,R.drawable.accondensercoolingfan,R.drawable.doorhandle,R.drawable.accontrols,R.drawable.accompressor};
-    public static String [] prgmNameList={"AC compressor","Belt tensioner","Bumper","Door handle","AC controls","AC compressor","Bumper","Door handler","Cooling fan","Door handler","AC controls","AC compressor"};
-    public static int [] prgmTimeDuration={39, 39, 39, 39, 3, 3, 3, 5, 5, 5, 7, 7};
+    public static int [] prgmImages={R.drawable.accompressor ,R.drawable.belttensioner,R.drawable.bumper,R.drawable.doorhandle,R.drawable.accontrols,R.drawable.accompressor,R.drawable.bumper,R.drawable.doorhandle,R.drawable.accondensercoolingfan};
+    public static String [] prgmNameList={"AC compressor","Belt tensioner","Bumper","Door handle","AC controls","AC compressor","Bumper","Door handler","Cooling fan"};
+    public static int [] prgmTimeDuration={39, 39, 39, 39, 3, 3, 3, 5, 5, };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
