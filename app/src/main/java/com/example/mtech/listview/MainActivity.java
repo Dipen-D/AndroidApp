@@ -13,7 +13,7 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 
 public class MainActivity extends Activity {
 
-    ListView lv;
+    StickyListHeadersListView lv;
     Context context;
 
     ArrayList prgmName;
@@ -26,12 +26,9 @@ public class MainActivity extends Activity {
 
         context=this;
 
-        lv=(ListView) findViewById(R.id.listView);
-        lv.setAdapter(new CustomAdapter(this, prgmNameList,prgmImages));
-
-        /*StickyListHeadersListView stickyList = (StickyListHeadersListView) findViewById(R.id.list);
-        MyAdapter adapter = new MyAdapter(this);
-        stickyList.setAdapter(adapter);*/
+        lv=(StickyListHeadersListView) findViewById(R.id.listView);
+        CustomAdapter customAdapter = new CustomAdapter(this, prgmNameList,prgmImages);
+        lv.setAdapter(customAdapter);
 
     }
 

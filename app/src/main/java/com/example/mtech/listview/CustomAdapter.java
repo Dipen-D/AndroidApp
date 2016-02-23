@@ -6,10 +6,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.HeaderViewListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-public class CustomAdapter extends BaseAdapter{
+
+import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
+
+public class CustomAdapter extends BaseAdapter implements StickyListHeadersAdapter{
     String [] result;
     Context context;
     int [] imageId;
@@ -31,13 +35,35 @@ public class CustomAdapter extends BaseAdapter{
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return position;
+        return result[position];
     }
 
     @Override
     public long getItemId(int position) {
         // TODO Auto-generated method stub
         return position;
+    }
+
+    @Override
+    public View getHeaderView(int position, View convertView, ViewGroup parent) {
+        HeaderViewHolder holder;
+        if (convertView == null) {
+            holder = new HeaderViewHolder();
+            convertView = inflater.inflate(R.layout.header_view_holder, parent, false);
+            holder.text = (TextView) convertView.findViewById(R.id.text);
+            convertView.setTag(holder);
+        } else {
+            holder = (HeaderViewHolder) convertView.getTag();
+        }
+        //set header text as first char in name
+        String headerText = "" + result[position].subSequence(0, 1).charAt(0);
+        holder.text.setText(headerText);
+        return convertView;
+    }
+
+    @Override
+    public long getHeaderId(int i) {
+        return result[i].subSequence(0, 1).charAt(0);
     }
 
     public class Holder
@@ -65,4 +91,7 @@ public class CustomAdapter extends BaseAdapter{
         return rowView;
     }
 
+    class HeaderViewHolder {
+        TextView text;
+    }
 }
