@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
     ArrayList prgmName;
     public static int [] prgmImages={R.drawable.accompressor ,R.drawable.belttensioner,R.drawable.bumper,R.drawable.doorhandle,R.drawable.accontrols,R.drawable.accompressor,R.drawable.bumper,R.drawable.doorhandle,R.drawable.accondensercoolingfan,R.drawable.doorhandle,R.drawable.accontrols,R.drawable.accompressor};
     public static String [] prgmNameList={"AC compressor","Belt tensioner","Bumper","Door handle","AC controls","AC compressor","Bumper","Door handler","Cooling fan","Door handler","AC controls","AC compressor"};
+    public static int [] prgmTimeDuration={39, 39, 39, 39, 3, 3, 3, 5, 5, 5, 7, 7};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,7 @@ public class MainActivity extends Activity {
         context=this;
 
         lv=(StickyListHeadersListView) findViewById(R.id.listView);
-        CustomAdapter customAdapter = new CustomAdapter(this, prgmNameList,prgmImages);
+        CustomAdapter customAdapter = new CustomAdapter(this, prgmNameList, prgmImages, prgmTimeDuration);
         lv.setAdapter(customAdapter);
 
     }
