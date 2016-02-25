@@ -1,6 +1,7 @@
 package com.example.mtech.listview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.app.Activity;
 
 import java.util.Random;
 
@@ -118,7 +120,25 @@ public class CustomAdapter extends BaseAdapter implements StickyListHeadersAdapt
         }
 
         holder.tv.setText(result[position]);
-
+        bindClick(holder);
         return convertView;
+    }
+
+    private void bindClick(Holder holder) {
+        try {
+            holder.img.setOnClickListener(new View.OnClickListener() {
+                //@Override
+                public void onClick(View v) {
+                    Intent nextActivity = new Intent(context,SupplierListActivity.class);
+                    Activity activity = (Activity) context;
+                    activity.startActivity(nextActivity);
+                    //push from bottom to top
+                    activity.overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+                }
+            });
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

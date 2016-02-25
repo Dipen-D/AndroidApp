@@ -1,0 +1,266 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".RequestPart">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/request_a_part_header" />
+
+    <RelativeLayout
+            android:id="@+id/select_a_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#DDD"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/header"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/yearTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:padding="12dp"
+                android:text="Select year"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:freezesText="true"
+                />
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/arrow"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="12dp"/>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/select_a_make"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#DDD"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/select_a_year"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/makeTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:padding="12dp"
+            android:text="Select make"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:freezesText="true"/>
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="12dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/select_a_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#DDD"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/select_a_make"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/modelTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:padding="12dp"
+            android:text="Select model"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            android:freezesText="true"/>
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="12dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDD"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/select_a_model"
+        android:id="@+id/engine_type">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fuel type"
+                android:textColor="#000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:paddingRight="50dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Petrol"
+                android:paddingLeft="0dp"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diesel"
+                android:paddingLeft="0dp"
+                android:layout_gravity="center_horizontal" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/select_a_part"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#DDD"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/engine_type"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:padding="12dp"
+            android:text="Part category"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="12dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/select_a_part"
+        android:background="#DDD"
+        android:layout_marginTop="12dp"
+        android:padding="5dp"
+        android:id="@+id/add_photo">
+
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/car_thumbnail"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/imageView" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:id="@+id/button"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_marginLeft="25dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/accent"
+            android:minHeight="30dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDD"
+        android:layout_marginTop="12dp"
+        android:padding="5dp"
+        android:layout_below="@+id/add_photo"
+        android:id="@+id/vin_box">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/vin"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="Vin" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDD"
+        android:layout_marginTop="12dp"
+        android:padding="5dp"
+        android:layout_below="@+id/vin_box">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/quantity"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="Quantity" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/notes"
+            android:hint="Notes"
+            android:layout_marginTop="40dp"/>
+    </RelativeLayout>
+</RelativeLayout>
